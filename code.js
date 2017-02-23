@@ -1,30 +1,15 @@
-console.log("Hello 2");
+// Todo App Version 4
+console.log("Todo App Version 4.2");
 console.log("");
-
-var task = "lanudry";
-var x = 0;
-var upTask = "water plants";
-var a = 1, b = 1;
 
 var td_obj = {
-    list: ["clean", "cook"],
+    list: [
+        {task:"Morning Exersice", completed: false},
+        {task:"CodeWars - GitHub", completed: true}],
+
     displayTD: function(){console.log(this.list);},
-    addTD: function(){this.list.push(task);},
-    changeTD: function(x, upTask){this.list[x] = upTask;},
-    deleteTD: function(a, b){ this.list.splice(a, b);}
+    addTD:     function(task2add){this.list.push({task: task2add, completed: false});},
+    changeTD:  function(x, chanTask){this.list[x].task = chanTask;},
+    deleteTD:  function(a, b){ this.list.splice(a, b);},
+    taskComp:  function(x){ this.list[x].completed = !this.list[x].completed;}
 };
-
-td_obj.displayTD();
-console.log("");
-
-td_obj.addTD(task);
-td_obj.displayTD();
-console.log("");
-
-td_obj.changeTD(x, upTask);
-td_obj.displayTD();
-console.log("");
-
-td_obj.deleteTD(a, b);
-td_obj.displayTD();
-console.log("");
